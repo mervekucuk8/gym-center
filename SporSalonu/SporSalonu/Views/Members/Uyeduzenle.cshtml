@@ -1,0 +1,97 @@
+﻿@model SporSalonu.Models.uyemodel
+
+@{
+    ViewData["Title"] = "Uyeduzenle";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<body>
+    <div class="fh5co-parallax" style=" background-image: url(/tema/images/home-image-3.jpg);" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+                    <div class="fh5co-intro fh5co-table-cell animate-box">
+                        <h1 class="text-center">ÜYE DÜZENLE</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div style="padding-left: 15px; margin-top:15px;">
+        <a href="/Members/Index" class="btn btn-default" style="background-color:#f79a06">ÜYE LİSTESİNE DÖN</a>
+     
+    </div>
+
+    <div id="fh5co-programs-section">
+        <div class="container center-block">
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                    <div class="heading-section  animate-box">
+                        <form asp-action="Uyeduzenle">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="id" class="control-label">ID</label>
+                                <input asp-for="id" readonly="true" class="form-control" />
+                                <span asp-validation-for="id" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="tc" class="control-label">TC NO</label>
+                                <input asp-for="tc" class="form-control" />
+                                <span asp-validation-for="tc" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="adi" class="control-label">AD</label>
+                                <input asp-for="adi" class="form-control" />
+                                <span asp-validation-for="adi" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="soyad" class="control-label">SOYAD</label>
+                                <input asp-for="soyad" class="form-control" />
+                                <span asp-validation-for="soyad" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="telefon" class="control-label">TELEFON</label>
+                                <input asp-for="telefon" class="form-control" />
+                                <span asp-validation-for="telefon" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="dogumtarihi" class="control-label">DOĞUM TARİHİ</label>
+                                <input type="date" asp-for="dogumtarihi" class="form-control" />
+                                <span asp-validation-for="dogumtarihi" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="il" class="control-label">İL</label>
+                                <input asp-for="il" class="form-control" />
+                                <span asp-validation-for="il" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ilce" class="control-label">İLÇE</label>
+                                <input asp-for="ilce" class="form-control" />
+                                <span asp-validation-for="ilce" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="adres" class="control-label">ADRES</label>
+                                <input asp-for="adres" class="form-control" />
+                                <span asp-validation-for="adres" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="DEĞİŞİKLİĞİ KAYDET" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        @ViewData["sonucmesaji"]
+    </div>
+  
+
+</body>
+
+            
+

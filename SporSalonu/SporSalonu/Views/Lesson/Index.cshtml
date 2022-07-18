@@ -1,0 +1,74 @@
+﻿  @model IEnumerable<SporSalonu.Models.dersmodel>
+
+    @{
+        ViewData["Title"] = "Index";
+        Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    }
+    <body>
+        <div class="fh5co-parallax" style=" background-image: url(/tema/images/home-image-3.jpg);" data-stellar-background-ratio="0.5">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+                        <div class="fh5co-intro fh5co-table-cell animate-box">
+                            <h1 class="text-center">DERS İŞLEMLERİ</h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fh5co-programs-section">
+            <div class="container center-block">
+                <div class="row">
+                    <div class="">
+                        <div class="heading-section  animate-box">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            ID
+                                        </th>
+                                        <th>
+                                            DERS KODU
+                                        </th>
+                                        <th>
+                                            DERS ADI
+                                        </th>
+                                        <th>
+                                            DÜZENLE
+                                        </th>
+                                        <th>
+                                            SİL
+                                        </th>                                     
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ders_id)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ders_kodu)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ders_adi)
+                                            </td>
+
+                                            <td><a href="/Lesson/Dersduzenle/@item.ders_id" class="btn btn-danger">DÜZENLE</a></td>
+                                            <td><a href="/Lesson/Derssil/@item.ders_id" class="btn btn-success">SİL</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Lesson/Derskayit" class="btn btn-default" style="background-color:#0094ff">YENİ KAYIT</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </body>
