@@ -1,0 +1,112 @@
+﻿@model IEnumerable<SporSalonu.Models.egitmenmodel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+
+<body>
+    <div class="fh5co-parallax" style=" background-image: url(/tema/images/home-image-3.jpg);" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+                    <div class="fh5co-intro fh5co-table-cell animate-box">
+                        <h1 class="text-center">ANTRENÖR İŞLEMLERİ</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fh5co-programs-section">
+        <div class="container center-block">
+            <div class="row">
+                <div class="">
+                    <div class="heading-section  animate-box">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        AD
+                                    </th>
+                                    <th>
+                                        SOYAD
+                                    </th>
+                                    <th>
+                                        TELEFON
+                                    </th>
+                                    <th>
+                                        DOĞUM TARİHİ
+                                    </th>
+                                    <th>
+                                        İL
+                                    </th>
+                                    <th>
+                                        İLçE
+                                    </th>
+                                    <th>
+                                        ADRES
+                                    </th>
+                                    <th>
+                                        DÜZENLE
+                                    </th>
+                                    <th>
+                                        SİL
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.adi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.soyad)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.telefon)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.dogumtarihi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.il)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ilce)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.adres)
+                                    </td>
+                                    
+                                    <td><a href="/Coach/Egitmenduzenle/@item.id" class="btn btn-danger">DÜZENLE</a></td>
+                                    <td><a href="/Coach/Egitmensil/@item.id" class="btn btn-success">SİL</a></td>                                   
+                                    <td><!--
+                                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })-->
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/Coach/Egitmenkayit" class="btn btn-default" style="background-color:#0094ff">YENİ KAYIT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
